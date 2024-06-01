@@ -659,7 +659,7 @@
 <p><code class="language-text highlight">Helix-py-api</code> will open up a new world of possibilities. Here are a few ideas to get you started:</p>
 <table border=0>
 <tr>
-<td width=25% style="vertical-align: middle;"><img src="./assets/images/idea.png"></td>
+<td width=25% style="vertical-align: middle;"><img src="https://hacklabsguitar.github.io/helix-py-api/assets/images/idea.png"></td>
 <td style="font-size:medium">
 <ul>
 <li>Automatically change to a specific setlist, preset, and or snapshot with one click (i.e. script, button, etc)
@@ -691,7 +691,7 @@
 <span class="nb">cd</span><span class="w"> </span><span class="sb">`</span>Helix-py-api<span class="sb">`</span>
 pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
 </code></pre></div>
-<p>Optionally change any default settings.</p>
+<p>Optionally change any default <a href="https://hacklabsguitar.github.io/helix-py-api/settings/">settings</a>.</p>
 <p>Create an API instance.</p>
 <div class="language-python highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">helixapi</span>
 
@@ -703,7 +703,7 @@ pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </s
 <span class="n">helix</span> <span class="o">=</span> <span class="n">Helix</span><span class="p">(</span><span class="n">file_path</span><span class="o">=</span><span class="s2">&quot;/path/to/bundle.hlb&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="usage-examples">Usage Examples<a class="headerlink" href="#usage-examples" title="Permanent link">¤</a></h2>
-<p>The full API of this library can be found in the <a href="../helix/">API reference</a>.</p>
+<p>The full API of this library can be found in the <a href="https://hacklabsguitar.github.io/helix-py-api/helix/">API reference</a>.</p>
 <div class="language-python highlight"><pre><span></span><code><span class="c1"># Example: Import/export files</span>
 <span class="n">helix</span><span class="o">.</span><span class="n">setlists</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">import_setlist</span><span class="p">(</span><span class="n">file_path</span><span class="o">=</span><span class="s2">&quot;/path/to/setlist.hls&quot;</span><span class="p">)</span>
 <span class="n">helix</span><span class="o">.</span><span class="n">bundle</span><span class="o">.</span><span class="n">export_bundle</span><span class="p">(</span><span class="n">file_path</span><span class="o">=</span><span class="s2">&quot;/path/to/bundle.hlb&quot;</span><span class="p">)</span>
