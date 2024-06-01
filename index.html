@@ -655,7 +655,7 @@
 </p>
 
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¤</a></h2>
-<p><code class="language-text highlight">Helix-py-api</code> is the unofficial API for managing Line 6 Helix files and related devices. It includes features for editing, standardizing, importing/exporting, renaming, reordering, and cloning bundles, setlists, presets, and snapshots. You can easily build setlists and presests from separate files as well as breakup bundles and setlists into individual setlist and preset files. It also includes simplified MIDI control (i.e. no MIDI message format/value knowledge needed) for Helix hardware and software (Helix Native) as well as direct MIDI control for other Line 6 (ex. FBV) and 3rd party devices. </p>
+<p><code class="language-text highlight">Helix-py-api</code> is the unofficial API for managing Line 6 Helix files and related devices. It includes features for editing, standardizing, importing/exporting, renaming, reordering, and cloning bundles, setlists, presets, and snapshots. You can easily build setlists and presets from separate files as well as breakup bundles and setlists into individual setlist and preset files. It also includes simplified MIDI control (i.e. no MIDI message format/value knowledge needed) for Helix hardware and software (Helix Native) as well as direct MIDI control for other Line 6 (ex. FBV) and 3rd party devices. </p>
 <p><code class="language-text highlight">Helix-py-api</code> will open up a new world of possibilities. Here are a few ideas to get you started:</p>
 <table border=0>
 <tr>
@@ -678,9 +678,23 @@
 <li>ex. After you downloaded bunch of presets from CustomTone</li>
 </ol>
 </li>
-<li>Individaully backup all your presets to Github</li></ul></td>
+<li>Individually backup all your presets to Github</li></ul></td>
 </tr></table>
 
+<h2 id="current-limitations">Current Limitations<a class="headerlink" href="#current-limitations" title="Permanent link">¤</a></h2>
+<p>Until time, knowledge, and desire permits to add new features, below are some notable limitations. </p>
+<h3 id="helix">Helix<a class="headerlink" href="#helix" title="Permanent link">¤</a></h3>
+<ul>
+<li>Reading state/changes directly from the Helix</li>
+<li>Importing/exporting files to/from the Helix</li>
+<li>Anything not exposed in the API (ex. blocks, IRs, favorites, etc)</li>
+</ul>
+<h3 id="helix-native">Helix Native<a class="headerlink" href="#helix-native" title="Permanent link">¤</a></h3>
+<ul>
+<li>Controlling Helix Native requires a virtual MIDI cable: <a href="https://springbeats.com/2016/12/10/springbeats-free-virtual-midi-cable/">https://springbeats.com/2016/12/10/springbeats-free-virtual-midi-cable/</a></li>
+<li>Helix Native midi control through VST's is severely limited as stated in the Helix Native product manual:
+    <em>AU and AAX Plugin Formats Only: At this time, remote MIDI control of setlist and preset changes is supported only with the AU (Mac) and Pro Tools AAX (Mac and Windows) Helix Native plugin formats. It is not supported for the VST2 or VST3 Helix Native plugin formats on Mac or Windows.</em></li>
+</ul>
 <h2 id="support-the-project">Support the Project<a class="headerlink" href="#support-the-project" title="Permanent link">¤</a></h2>
 <p>If you find this project useful, please consider supporting it to help with ongoing development and maintenance:</p>
 <p><a href="https://github.com/sponsors/hacklabsguitar"><img alt="" src="https://img.shields.io/static/v1?style=flat-square&amp;label=Sponsor&amp;message=%E2%9D%A4&amp;logo=GitHub&amp;color=%23fe8e86" /></a></p>
