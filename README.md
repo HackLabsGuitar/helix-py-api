@@ -12,7 +12,7 @@
 
 ## Overview
 
-`Helix-py-api` is the unofficial API for managing Line 6 Helix files and related devices. It includes features for editing, standardizing, importing/exporting, renaming, reordering, and cloning bundles, setlists, presets, and snapshots. You can easily build setlists and presests from separate files as well as breakup bundles and setlists into individual setlist and preset files. It also includes simplified MIDI control (i.e. no MIDI message format/value knowledge needed) for Helix hardware and software (Helix Native) as well as direct MIDI control for other Line 6 (ex. FBV) and 3rd party devices. 
+`Helix-py-api` is the unofficial API for managing Line 6 Helix files and related devices. It includes features for editing, standardizing, importing/exporting, renaming, reordering, and cloning bundles, setlists, presets, and snapshots. You can easily build setlists and presets from separate files as well as breakup bundles and setlists into individual setlist and preset files. It also includes simplified MIDI control (i.e. no MIDI message format/value knowledge needed) for Helix hardware and software (Helix Native) as well as direct MIDI control for other Line 6 (ex. FBV) and 3rd party devices. 
 
 `Helix-py-api` will open up a new world of possibilities. Here are a few ideas to get you started:
 <table border=0>
@@ -36,8 +36,23 @@
 <li>ex. After you downloaded bunch of presets from CustomTone</li>
 </ol>
 </li>
-<li>Individaully backup all your presets to Github</li></ul></td>
+<li>Individually backup all your presets to Github</li></ul></td>
 </tr></table>
+
+## Current Limitations
+Until time, knowledge, and desire permits to add new features, below are some notable limitations. 
+
+### Helix
+
+* Reading state/changes directly from the Helix
+* Importing/exporting files to/from the Helix
+* Anything not exposed in the API (ex. blocks, IRs, favorites, etc)
+
+### Helix Native
+
+* Controlling Helix Native requires a virtual MIDI cable: https://springbeats.com/2016/12/10/springbeats-free-virtual-midi-cable/
+* Helix Native midi control through VST's is severely limited as stated in the Helix Native product manual:
+    *AU and AAX Plugin Formats Only: At this time, remote MIDI control of setlist and preset changes is supported only with the AU (Mac) and Pro Tools AAX (Mac and Windows) Helix Native plugin formats. It is not supported for the VST2 or VST3 Helix Native plugin formats on Mac or Windows.*
 
 ## Support the Project
 If you find this project useful, please consider supporting it to help with ongoing development and maintenance:
