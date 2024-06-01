@@ -39,7 +39,7 @@
 <li>Individually backup all your presets to Github</li></ul></td>
 </tr></table>
 
-## Current Limitations
+## Notable Limitations
 Until time, knowledge, and desire permits to add new features, below are some notable limitations. 
 
 ### Helix
