@@ -1,0 +1,19 @@
+{
+ "compression" : {
+  "crc32" : 18372250,
+  "decompressed_size" : 8814,
+  "type" : "zlib"
+ },
+ "encoded_data" : "eNrt1D0LwjAQgOH9fsVxcxc/quLuILi1mzh0yCBYEZOt9L83qeImCDf6DuEhuXDjO4haDOl2jSma7vUsqkM+an1IXXmZb2r3rg/las2hPR2bVhdWBmM1f348Q97y2ZB3vAaI+FcWLvIuw28pWZISRPSnZEVKENGfkjUpQUR/SmpSgoj+lGxICSL6U7IlJYjoT8mOlCDit5RIZpQJaK9Fow==",
+ "encoding" : "Base64",
+ "meta" : {
+  "application" : "HX Edit",
+  "appversion" : 57671680,
+  "device" : 2162689,
+  "device_version" : 57737216,
+  "modifieddate" : 1715640990,
+  "name" : "HX Edit Bundle May-13-2024 6:56:30pm"
+ },
+ "schema" : "L6PresetBundle",
+ "version" : 1
+}

@@ -1,0 +1,200 @@
+site_name: "helix-py-api"
+site_description: "Python API to manage Line 6 Helix devices and files"
+site_url: "https://github.com/HackLabsGuitar/"
+repo_url: "https://github.com/HackLabsGuitar/helix-py-api"
+repo_name: "/HackLabsGuitar/helix-py-api"
+site_dir: "site"
+watch: [mkdocs.yml, README.md, helixapi]
+copyright: Copyright &copy; 2024 Hack Labs Guitar
+edit_uri: edit/main/docs/
+
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+
+nav:
+- Overview:
+  - helix-py-api: index.md
+  - Settings: settings.md
+- API reference:
+  - Bundle: bundle.md
+  - Helix: helix.md
+  - Midi: midi.md
+  - Preset: preset.md
+  - Presets: presets.md
+  - Setlist: setlist.md
+  - Setlists: setlists.md
+  - Snapshot: snapshot.md
+  - Snapshots: snapshots.md
+
+
+theme:
+  # name: readthedocs
+  name: material
+  logo: assets/images/logo.png
+  favicon: assets/images/favicon.ico
+  features:
+  - announce.dismiss
+  - content.action.edit
+  - content.action.view
+  - content.code.annotate
+  - content.code.copy
+  - content.tooltips
+  - navigation.footer
+  - navigation.indexes
+  - navigation.sections
+
+  - navigation.instant
+  - navigation.instant.prefetch
+
+  - search.highlight
+  - search.suggest
+  - toc.follow
+  - toc.integrate 
+  
+  palette:
+  - media: "(prefers-color-scheme)"
+    toggle:
+      icon: material/brightness-auto
+      name: Switch to light mode
+  - media: "(prefers-color-scheme: light)"
+    scheme: default
+    primary: teal
+    accent: purple
+    toggle:
+      icon: material/weather-sunny
+      name: Switch to dark mode
+  - media: "(prefers-color-scheme: dark)"
+    scheme: slate
+    primary: black
+    accent: lime
+    toggle:
+      icon: material/weather-night
+      name: Switch to system preference
+  locale: en
+  include_sidebar: true
+
+markdown_extensions:
+- attr_list
+- admonition
+- callouts
+- footnotes
+- pymdownx.details
+- pymdownx.emoji:
+    emoji_index: !!python/name:material.extensions.emoji.twemoji
+    emoji_generator: !!python/name:material.extensions.emoji.to_svg
+- pymdownx.highlight:
+    pygments_lang_class: true
+- pymdownx.inlinehilite:
+    style_plain_text: true
+- pymdownx.magiclink
+- pymdownx.snippets:
+    base_path: [!relative $config_dir]
+    check_paths: true
+- pymdownx.superfences
+- pymdownx.tabbed:
+    alternate_style: true
+    slugify: !!python/object/apply:pymdownx.slugs.slugify
+      kwds:
+        case: lower
+- pymdownx.tasklist:
+    custom_checkbox: true
+- pymdownx.tilde
+- toc:
+    permalink: "¤"
+    toc_depth: 6
+plugins:
+- search
+- autorefs
+- markdown-exec
+- include-markdown
+# - coverage
+- mkdocstrings:
+    handlers:
+      python:
+        options:
+          filters:
+            - "!__.*"  # Exclude all dunder methods
+            - "!^_.*"   # Exclude all single underscore methods/attributes
+            # - "__init__"  # Explicitly include __init__
+
+          # # General options:
+          # find_stubs_package: true # (bool) – Whether to load stubs package (package-stubs) when extracting docstrings. Default False.
+          # allow_inspection: true #  (bool) – Whether to allow inspecting modules when visiting them is not possible. Default: True.
+          # show_bases: true #  (bool) – Show the base classes of a class. Default: True.
+          # show_inheritance_diagram: true #  (bool) – Show the inheritance diagram of a class using Mermaid. Default: False.
+          # show_source: true #  (bool) – Show the source code of this object. Default: True.
+          # # preload_modules (list[str] | None) – Pre-load modules that are not specified directly in autodoc instructions (::: identifier). It is useful when you want to render documentation for a particular member of an object, and this member is imported from another package than its parent.
+          # # For an imported member to be rendered, you need to add it to the __all__ attribute of the importing module.
+          # # The modules must be listed as an array of strings. Default: None.
+
+          # # Headings options:
+          # heading_level: true #  (int) – The initial heading level to use. Default: 2.
+          # parameter_headings: true #  (bool) – Whether to render headings for parameters (therefore showing parameters in the ToC). Default: False.
+          # show_root_heading: true #  (bool) – Show the heading of the object at the root of the documentation tree (i.e. the object referenced by the identifier after :::). Default: False.
+          # show_root_toc_entry: true #  (bool) – If the root heading is not shown, at least add a ToC entry for it. Default: True.
+          # show_root_full_path: true #  (bool) – Show the full Python path for the root object heading. Default: True.
+          # show_root_members_full_path: true #  (bool) – Show the full Python path of the root members. Default: False.
+          # show_object_full_path: true #  (bool) – Show the full Python path of every object. Default: False.
+          # show_category_heading: true #  (bool) – When grouped by categories, show a heading for each category. Default: False.
+          show_symbol_type_heading: true #  (bool) – Show the symbol type in headings (e.g. mod, class, meth, func and attr). Default: False.
+          show_symbol_type_toc: true #  (bool) – Show the symbol type in the Table of Contents (e.g. mod, class, methd, func and attr). Default: False.
+          
+          # # Members options:
+          # inherited_members: true #  (list[str] | bool | None) – A boolean, or an explicit list of inherited members to render. If true, select all inherited members, which can then be filtered with members. If false or empty list, do not select any inherited member. Default: False.
+          # # members (list[str] | bool | None) – A boolean, or an explicit list of members to render. If true, select all members without further filtering. If false or empty list, do not render members. If none, select all members and apply further filtering with filters and docstrings. Default: None.
+          # # members_order (str) – The members ordering to use. Options: alphabetical - order by the members names, source - order members as they appear in the source file. Default: "alphabetical".
+          # # filters (list[str] | None) – A list of filters applied to filter objects based on their name. A filter starting with ! will exclude matching objects instead of including them. The members option takes precedence over filters (filters will still be applied recursively to lower members in the hierarchy). Default: ["!^_[^_]"].
+          # group_by_category: true #  (bool) – Group the object's children by categories: attributes, classes, functions, and modules. Default: True.
+          # show_submodules: true #  (bool) – When rendering a module, show its submodules recursively. Default: False.
+          # summary: true #  (bool | dict[str, bool]) – Whether to render summaries of modules, classes, functions (methods) and attributes.
+          # show_labels: true #  (bool) – Whether to show labels of the members. Default: True.
+          
+          # # Docstrings options:
+          docstring_style: "google" # (str) – The docstring style to use: google, numpy, sphinx, or None. Default: "google".
+          # # docstring_options (dict) – The options for the docstring parser. See parsers under griffe.docstrings.
+          # docstring_section_style: "spacy" # (str) – The style used to render docstring sections. Options: table, list, spacy. Default: "table".
+          # merge_init_into_class: true #  (bool) – Whether to merge the __init__ method into the class' signature and docstring. Default: False.
+          show_if_no_docstring: true #  (bool) – Show the object heading even if it has no docstring or children with docstrings. Default: False.
+          # show_docstring_attributes: true #  (bool) – Whether to display the "Attributes" section in the object's docstring. Default: True.
+          # show_docstring_functions: true #  (bool) – Whether to display the "Functions" or "Methods" sections in the object's docstring. Default: True.
+          # show_docstring_classes: true #  (bool) – Whether to display the "Classes" section in the object's docstring. Default: True.
+          # show_docstring_modules: true #  (bool) – Whether to display the "Modules" section in the object's docstring. Default: True.
+          # show_docstring_description: true #  (bool) – Whether to display the textual block (including admonitions) in the object's docstring. Default: True.
+          # show_docstring_example: true # s (bool) – Whether to display the "Examples" section in the object's docstring. Default: True.
+          # show_docstring_other_parameters: true #  (bool) – Whether to display the "Other Parameters" section in the object's docstring. Default: True.
+          # show_docstring_parameters: true #  (bool) – Whether to display the "Parameters" section in the object's docstring. Default: True.
+          # show_docstring_raises: true #  (bool) – Whether to display the "Raises" section in the object's docstring. Default: True.
+          # show_docstring_receives: true #  (bool) – Whether to display the "Receives" section in the object's docstring. Default: True.
+          # show_docstring_returns: true #  (bool) – Whether to display the "Returns" section in the object's docstring. Default: True.
+          # show_docstring_warns: true #  (bool) – Whether to display the "Warns" section in the object's docstring. Default: True.
+          # show_docstring_yields: true #  (bool) – Whether to display the "Yields" section in the object's docstring. Default: True.
+          
+          # # Signatures/annotations options:
+          # annotations_path: "brief" # " (str) – The verbosity for annotations path: brief (recommended), or source (as written in the source). Default: "brief".
+          # # line_length (int) – Maximum line length when formatting code/signatures. Default: 60.
+          # show_signature: true #  (bool) – Show methods and functions signatures. Default: True.
+          # show_signature_annotations: true #  (bool) – Show the type annotations in methods and functions signatures. Default: False.
+          # signature_crossrefs: true #  (bool) – Whether to render cross-references for type annotations in signatures. Default: False.
+          # separate_signature: true #  (bool) – Whether to put the whole signature in a code block below the heading. If Black is installed, the signature is also formatted using it. Default: False.
+          # unwrap_annotated: true #  (bool) – Whether to unwrap Annotated types to show only the type without the annotations. Default: False.
+          # modernize_annotations: true #  (bool) – Whether to modernize annotations, for example Optional[str] into str | None. Default: False.
+
+# - git-committers:
+#     enabled: false
+#     repository: mkdocstrings/mkdocstrings
+# - minify:
+#     minify_html: false
+# - group:
+#     enabled: false
+#     plugins:
+#     - typeset
+
+extra:
+  generator: false
+  social:
+  - icon: fontawesome/brands/github
+    link: https://github.com/hacklabsguitar
+  - icon: fontawesome/brands/youtube
+    link: https://www.youtube.com/@hacklabsguitar

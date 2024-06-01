@@ -1,0 +1,27 @@
+# Configuration settings for the API
+log_level: DEBUG
+midi:
+  targets:
+    - "Line 6 Helix 9"
+standards:
+  setlist:
+    casing: UPPERCASE
+    replacements:
+      " ":
+        - "_"
+      
+  preset:
+    casing: UPPERCASE
+    replacements:
+      " ":
+        - "_"
+      "Preset":
+        - "New Preset"
+
+  snapshot:
+    casing: UPPERCASE
+    replacements:
+      " ":
+        - "_"
+      "Solo":
+        - "lead"

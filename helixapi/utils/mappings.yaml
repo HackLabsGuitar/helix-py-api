@@ -1,0 +1,15 @@
+data:
+  setlist:
+    root: "setlists.setlist_index"
+    name: "setlists.setlist_index.meta.name"
+
+  preset:
+    root: "setlists.setlist_index.presets.preset_index"
+    name: "setlists.setlist_index.presets.preset_index.data.meta.name"
+    tempo: "setlists.setlist_index.presets.preset_index.data.tone.global.@tempo"
+    current_snapshot: "setlists.setlist_index.presets.preset_index.data.tone.global.@current_snapshot"
+
+  snapshot:
+    root: "setlists.setlist_index.presets.preset_index.data.tone.snapshot_snapshot_index"
+    name: "setlists.setlist_index.presets.preset_index.data.tone.snapshot_snapshot_index.@name"
+    ledcolor: "setlists.setlist_index.presets.preset_index.data.tone.snapshot_snapshot_index.@ledcolor"
