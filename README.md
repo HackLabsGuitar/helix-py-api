@@ -17,7 +17,7 @@
 `Helix-py-api` will open up a new world of possibilities. Here are a few ideas to get you started:
 <table border=0>
 <tr>
-<td width=25% style="vertical-align: middle;"><img src="./assets/images/idea.png"></td>
+<td width=25% style="vertical-align: middle;"><img src="https://hacklabsguitar.github.io/helix-py-api/assets/images/idea.png"></td>
 <td style="font-size:medium">
 <ul>
 <li>Automatically change to a specific setlist, preset, and or snapshot with one click (i.e. script, button, etc)
@@ -56,7 +56,7 @@ cd `Helix-py-api`
 pip install -r requirements.txt
 ```
 
-Optionally change any default settings.
+Optionally change any default [settings](https://hacklabsguitar.github.io/helix-py-api/settings/).
 
 Create an API instance.
 
@@ -76,7 +76,7 @@ helix = Helix(file_path="/path/to/bundle.hlb")
 
 ## Usage Examples
 
-The full API of this library can be found in the [API reference](helix/).
+The full API of this library can be found in the [API reference](https://hacklabsguitar.github.io/helix-py-api/helix/).
 
 ```python
 # Example: Import/export files
