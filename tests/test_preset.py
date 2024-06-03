@@ -22,6 +22,16 @@ def test_preset_properties():
     preset.tempo = 111
     assert preset.tempo == 111
 
+    preset.author = "Me"
+    assert preset.author == "Me"
+
+    preset.band = "My Band"
+    assert preset.band == "My Band"
+
+    preset.song = "My Song"
+    assert preset.song == "My Song"
+
+
 def test_preset_export(temp_dir):
     # Test export_preset method
     helix = Helix()

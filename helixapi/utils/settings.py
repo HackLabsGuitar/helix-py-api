@@ -46,6 +46,38 @@ class Settings:
             int: The logging level.
         """
         return self.settings.get("log_level", DEFAULT_LOG_LEVEL)
+    
+    @property
+    def author_name(self) -> str:
+        """
+        Get the author name from the settings.
+
+        The value here will be written in the preset. This is typically only used at the CustomTone website.
+
+        Returns:
+            str: The author name.
+        """
+        name  = self.settings.get("author", {}).get("name", "")
+        if not isinstance(name, str):
+            return ""
+        return name
+
+
+    @property
+    def author_overwrite(self) -> bool:
+        """
+        Get the author overwrite setting from the settings.
+
+        when true, this will overwrite existing author names in the preset.
+        When false, the author name will only be written if it is not already set.
+
+        Returns:
+            bool: True if the author name should be overwritten, False otherwise.
+        """
+        value = self.settings.get("author", {}).get("overwrite", False)
+        if not isinstance(value, bool):
+            return False
+        return value
 
     @property
     def midi_targets(self) -> list:

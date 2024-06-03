@@ -6,6 +6,9 @@ data:
   preset:
     root: "setlists.setlist_index.presets.preset_index"
     name: "setlists.setlist_index.presets.preset_index.data.meta.name"
+    author: "setlists.setlist_index.presets.preset_index.data.meta.author"
+    band: "setlists.setlist_index.presets.preset_index.data.meta.band"
+    song: "setlists.setlist_index.presets.preset_index.data.meta.song"
     tempo: "setlists.setlist_index.presets.preset_index.data.tone.global.@tempo"
     current_snapshot: "setlists.setlist_index.presets.preset_index.data.tone.global.@current_snapshot"
 

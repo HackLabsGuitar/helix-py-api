@@ -1,5 +1,6 @@
 from helixapi.utils.item_base import ItemBase
 from .snapshots import Snapshots
+from .utils.settings import Settings
 
 class Preset(ItemBase):
     """
@@ -26,6 +27,13 @@ class Preset(ItemBase):
         self.index = index
         self._active = False
         self._set_active_callback = set_active_callback
+
+        # set author if not set or if overwrite is enabled
+        # setting here allows us to change it later if needed
+        settings = Settings()
+        author = self.author
+        if not author or settings.author_overwrite:
+            self.author = settings.author_name
 
         # Load the snapshots
         self._snapshots = Snapshots(
@@ -110,6 +118,111 @@ class Preset(ItemBase):
         if len(value) > 16:
             raise ValueError("Name must be 16 characters or fewer.")
         self._set_data("name", value)
+
+    @property
+    def author(self) -> str:
+        """
+        Get the author of the preset.
+
+        Returns:
+            str: The author of the preset.
+
+        Examples:
+        ``` py
+        preset.author
+        ```
+        """
+        return str(self._get_data("author"))
+
+    @author.setter
+    def author(self, value: str) -> None:
+        """
+        Set the author of the preset.
+
+        Args:
+            value (str): The author to set for the preset.
+
+        Raises:
+            ValueError: If the author length exceeds the maximum allowed length.
+
+        Examples:
+        ``` py
+        preset.author = "Me"
+        ```
+        """
+        if len(value) > 16:
+            raise ValueError("Author must be 16 characters or fewer.")
+        self._set_data("author", value)
+
+    @property
+    def band(self) -> str:
+        """
+        Get the band of the preset.
+
+        Returns:
+            str: The band of the preset.
+
+        Examples:
+        ``` py
+        preset.band
+        ```
+        """
+        return self._get_data("band")
+
+    @band.setter
+    def band(self, value: str) -> None:
+        """
+        Set the band of the preset.
+
+        Args:
+            value (str): The band to set for the preset.
+
+        Raises:
+            ValueError: If the band length exceeds the maximum allowed length.
+
+        Examples:
+        ``` py
+        preset.band = "My Band"
+        ```
+        """
+        if len(value) > 16:
+            raise ValueError("Band must be 16 characters or fewer.")
+        self._set_data("band", value)
+    @property
+    def song(self) -> str:
+        """
+        Get the song name of the preset.
+
+        Returns:
+            str: The song name of the preset.
+
+        Examples:
+        ``` py
+        preset.song
+        ```
+        """
+        return self._get_data("song")
+
+    @song.setter
+    def song(self, value: str) -> None:
+        """
+        Set the song name of the preset.
+
+        Args:
+            value (str): The song name to set for the preset.
+
+        Raises:
+            ValueError: If the song name length exceeds the maximum allowed length.
+
+        Examples:
+        ``` py
+        preset.song = "My Song"
+        ```
+        """
+        if len(value) > 16:
+            raise ValueError("Song name must be 16 characters or fewer.")
+        self._set_data("song", value)
+
 
     def import_preset(self, file_path=None) -> None:
         """

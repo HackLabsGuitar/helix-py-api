@@ -1,5 +1,8 @@
 # Configuration settings for the API
 log_level: DEBUG
+author:
+  name: 
+  overwrite: false
 midi:
   targets:
     - "Line 6 Helix 9"
